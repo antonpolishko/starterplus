@@ -6,11 +6,11 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+  NavLink
+  // UncontrolledDropdown,
+  // DropdownToggle,
+  // DropdownMenu,
+  // DropdownItem
 } from 'reactstrap';
 
 import logo from './logo.svg';
@@ -18,14 +18,18 @@ import './App.css';
 
 // Текст вебсайта
 const siteLogoText = 'Стартер+';
+// const siteNavbar = {
+//   '#': "Главная",
+//   'services': "Услуги",
+//   'contacts': "Контакты",
+//   'map': "Как к нам проехать",
+//   'about': "О Нас",
+//   };
 
-const PageNavigation = () => {
-  return <div />;
-};
-
-class App extends Component {
+class SiteNavbar extends Component {
   constructor(props) {
     super(props);
+    this.state = { route: '/' };
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
@@ -42,31 +46,37 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar color="dark" dark expand="md">
           <NavbarBrand href="/">{siteLogoText}</NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="#">Главная</NavLink>
+                <NavLink href="/">Главная</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#services">Услуги</NavLink>
+                <NavLink href="/services/">Услуги</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#contacts">Контакты</NavLink>
+                <NavLink href="/contacts/">Контакты</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#map">Как к нам проехать</NavLink>
+                <NavLink href="/map/">Как к нам проехать</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#about">О Нас</NavLink>
+                <NavLink href="/about/">О Нас</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
       </div>
     );
+  }
+}
+
+class App extends Component {
+  render() {
+    return <SiteNavbar />;
   }
 }
 
