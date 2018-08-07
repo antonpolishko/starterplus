@@ -150,6 +150,37 @@ const SiteContacts = () => {
   );
 };
 
+const SiteAnniversary = () => {
+  return (
+    <div>
+      <h1>НАМ 10 ЛЕТ!</h1>
+      <br />
+      <p>
+        Уважаемые клиенты, коллеги, друзья! Поздравляем всех нас с юбилеем.
+        Огромное спасибо за то, что Вы были с нами на пути становления
+        предприятия.
+      </p>
+      <p>
+        Спасибо за терпение и понимание при возникающих рекламационных
+        ситуациях, которые неизбежно возникают при ремонте любых технических
+        устройств, особенно связанных с электричеством.
+      </p>
+      <p>
+        Мы же будем стремиться к тому, чтобы быть полезными для Вас и ваших
+        железных коней. Желаем счастливой дороги и пусть Ваш бизнес будет
+        рентабельным. С уважением, команда СТАРТЕР+
+      </p>
+      <br />
+      <Button href="/about/">
+        Подробнее о нас <i className="icon-info-sign" />
+      </Button>
+      <Button href="/location/">
+        Как к нам проехать <i className="icon-road" />{' '}
+      </Button>
+    </div>
+  );
+};
+
 class SiteLocation extends Component {
   constructor(props) {
     super(props);
@@ -425,6 +456,10 @@ class App extends Component {
 
         <SiteBody>
           <SiteServices />
+        </SiteBody>
+
+        <SiteBody>
+          <SiteAnniversary />
         </SiteBody>
 
         <SiteFooter />
