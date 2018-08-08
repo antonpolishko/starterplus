@@ -18,7 +18,7 @@ import {
   // DropdownItem
 } from 'reactstrap';
 
-import logo from './logo.svg';
+// import logo from './logo.svg'; //todo replace
 import './App.css';
 
 // Текст вебсайта
@@ -139,11 +139,16 @@ const SiteContacts = () => {
         <h3>Заезжайте по адресу:</h3>
         <ul>
           <li>г.Чернигов, ул. Инструментальная 34</li>
-          <a className="btn btn-primary btn" href="/location/">
+          <Button
+            color="primary"
+            onClick={() => {
+              this.props.handleClick('location');
+            }}
+          >
             <span className="btn-label">
               <i className="icon-map-marker" /> Найти на карте
             </span>
-          </a>
+          </Button>
         </ul>
       </ul>
     </div>
@@ -171,10 +176,18 @@ const SiteAnniversary = () => {
         рентабельным. С уважением, команда СТАРТЕР+
       </p>
       <br />
-      <Button href="/about/">
+      <Button
+        onClick={() => {
+          this.props.handleClick('about');
+        }}
+      >
         Подробнее о нас <i className="icon-info-sign" />
       </Button>
-      <Button href="/location/">
+      <Button
+        onClick={() => {
+          this.props.handleClick('location');
+        }}
+      >
         Как к нам проехать <i className="icon-road" />{' '}
       </Button>
     </div>
@@ -182,9 +195,9 @@ const SiteAnniversary = () => {
 };
 
 class SiteLocation extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   iframe = { __html: siteMapIframe };
 
@@ -229,7 +242,6 @@ class SiteLocation extends Component {
 class SiteNavbar extends Component {
   constructor(props) {
     super(props);
-    this.state = { route: '/' };
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
@@ -252,19 +264,49 @@ class SiteNavbar extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/">Главная</NavLink>
+                <NavLink
+                  onClick={() => {
+                    this.props.handleClick('/');
+                  }}
+                >
+                  Главная
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/services/">Услуги</NavLink>
+                <NavLink
+                  onClick={() => {
+                    this.props.handleClick('services');
+                  }}
+                >
+                  Услуги
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/contacts/">Контакты</NavLink>
+                <NavLink
+                  onClick={() => {
+                    this.props.handleClick('contacts');
+                  }}
+                >
+                  Контакты
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/map/">Как к нам проехать</NavLink>
+                <NavLink
+                  onClick={() => {
+                    this.props.handleClick('location');
+                  }}
+                >
+                  Как к нам проехать
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/about/">О Нас</NavLink>
+                <NavLink
+                  onClick={() => {
+                    this.props.handleClick('about');
+                  }}
+                >
+                  О Нас
+                </NavLink>
               </NavItem>
             </Nav>
           </Collapse>
@@ -275,9 +317,9 @@ class SiteNavbar extends Component {
 }
 
 class SiteHero extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return (
@@ -287,7 +329,14 @@ class SiteHero extends Component {
         <hr className="my-2" />
         <p>{siteJumbotronText}</p>
         <p className="lead">
-          <Button color="primary">{siteJumbotronMoreButton}</Button>
+          <Button
+            color="primary"
+            onClick={() => {
+              this.props.handleClick('about');
+            }}
+          >
+            {siteJumbotronMoreButton}
+          </Button>
         </p>
       </Jumbotron>
     );
@@ -295,9 +344,9 @@ class SiteHero extends Component {
 }
 
 class SiteBody extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return <Jumbotron>{this.props.children}</Jumbotron>;
@@ -404,19 +453,34 @@ class SiteFooter extends Component {
         <Row className="align-items-start">
           <Col md="1" />
           <Col>
-            <a className="btn btn-primary btn-block" href="/contacts/">
-              Подробнее...
-            </a>
+            <Button
+              color="primary"
+              onClick={() => {
+                this.props.handleClick('contacts');
+              }}
+            >
+              контакты...
+            </Button>
           </Col>
           <Col>
-            <a className="btn btn-primary btn-block" href="/services/">
-              Подробнее...
-            </a>
+            <Button
+              color="primary"
+              onClick={() => {
+                this.props.handleClick('services');
+              }}
+            >
+              услуги...
+            </Button>
           </Col>
           <Col>
-            <a className="btn btn-primary btn-block" href="/about/">
-              Подробнее...
-            </a>
+            <Button
+              color="primary"
+              onClick={() => {
+                this.props.handleClick('about');
+              }}
+            >
+              о нас...
+            </Button>
           </Col>
           <Col md="1" />
         </Row>
@@ -426,9 +490,9 @@ class SiteFooter extends Component {
 }
 
 class SiteCopyright extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return <div />;
@@ -436,33 +500,45 @@ class SiteCopyright extends Component {
 }
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      page: '/'
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(newState) {
+    // alert(newState);
+    //   alert('click');
+    //   this.setState({page:newState});
+    this.setState({ page: newState });
+  }
+
+  handleBody() {
+    const val = this.state.page;
+    if (val === '/') return <SiteHero handleClick={this.handleClick} />;
+    if (val === 'services')
+      return <SiteServices handleClick={this.handleClick} />;
+    if (val === 'contacts')
+      return <SiteContacts handleClick={this.handleClick} />;
+    if (val === 'location')
+      return <SiteLocation handleClick={this.handleClick} />;
+    if (val === 'about') return <SiteAbout handleClick={this.handleClick} />;
+    if (val === 'anniversary')
+      return <SiteAnniversary handleClick={this.handleClick} />;
+  }
+
   render() {
     return (
       <Container fluid>
-        <SiteNavbar />
-        <SiteHero />
+        <SiteNavbar handleClick={this.handleClick} />
 
-        <SiteBody>
-          <SiteAbout />
-        </SiteBody>
+        <SiteBody>{this.handleBody()}</SiteBody>
 
-        <SiteBody>
-          <SiteLocation />
-        </SiteBody>
-
-        <SiteBody>
-          <SiteContacts />
-        </SiteBody>
-
-        <SiteBody>
-          <SiteServices />
-        </SiteBody>
-
-        <SiteBody>
-          <SiteAnniversary />
-        </SiteBody>
-
-        <SiteFooter />
+        <SiteFooter handleClick={this.handleClick} />
         <SiteCopyright />
       </Container>
     );
