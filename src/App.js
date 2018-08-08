@@ -119,41 +119,47 @@ const SiteAbout = () => {
   );
 };
 
-const SiteContacts = () => {
-  return (
-    <div>
-      <h1>Наши контакты</h1>
-      <ul>
-        <h3>Звоните по телефонам:</h3>
+class SiteContacts extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Наши контакты</h1>
         <ul>
-          <li>/0462/ 605-525 </li>
-          <li>/095/ 895-4332 отдел подшипников и автозапчастей</li>
-          <li>/063/ 595-1913 отдел стартеров и генераторов</li>
+          <h3>Звоните по телефонам:</h3>
+          <ul>
+            <li>/0462/ 605-525 </li>
+            <li>/095/ 895-4332 отдел подшипников и автозапчастей</li>
+            <li>/063/ 595-1913 отдел стартеров и генераторов</li>
+          </ul>
+          <h3>Пишите на email:</h3>
+          <ul>
+            <li>
+              <a href="mailto:info@starterplus.net">info@starterplus.net</a>
+            </li>
+          </ul>
+          <h3>Заезжайте по адресу:</h3>
+          <ul>
+            <li>г.Чернигов, ул. Инструментальная 34</li>
+            <Button
+              color="primary"
+              onClick={() => {
+                this.props.handleClick('location');
+              }}
+            >
+              <span className="btn-label">
+                <i className="icon-map-marker" /> Найти на карте
+              </span>
+            </Button>
+          </ul>
         </ul>
-        <h3>Пишите на email:</h3>
-        <ul>
-          <li>
-            <a href="mailto:info@starterplus.net">info@starterplus.net</a>
-          </li>
-        </ul>
-        <h3>Заезжайте по адресу:</h3>
-        <ul>
-          <li>г.Чернигов, ул. Инструментальная 34</li>
-          <Button
-            color="primary"
-            onClick={() => {
-              this.props.handleClick('location');
-            }}
-          >
-            <span className="btn-label">
-              <i className="icon-map-marker" /> Найти на карте
-            </span>
-          </Button>
-        </ul>
-      </ul>
-    </div>
-  );
-};
+      </div>
+    );
+  }
+}
 
 const SiteAnniversary = () => {
   return (
