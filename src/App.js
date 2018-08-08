@@ -120,9 +120,9 @@ const SiteAbout = () => {
 };
 
 class SiteContacts extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return (
@@ -360,106 +360,40 @@ class SiteBody extends Component {
 }
 
 class SiteFooter extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return (
       <div>
-        <Row className="align-items-start">
-          <Col md="1" />
-          <Col>
-            <h3>Время работы:</h3>
-            <h5> Пн-Пт с 9-00 до 18-00ч.</h5>
-            <br />
-            <h3>Телефоны: </h3>
-            <h4>/0462/ 605-525</h4>
+        <Row>
+          <Col className="d-flex flex-column justify-content-between">
+            <div>
+              <h3>Время работы:</h3>
+              <h5> Пн-Пт с 9-00 до 18-00ч.</h5>
+              <br />
+              <h3>Телефоны: </h3>
+              <h4>/0462/ 605-525</h4>
 
-            <h4>/063/ 595-1913 </h4>
-            <h5>отдел стартеров и генераторов</h5>
+              <h4>/063/ 595-1913 </h4>
+              <h5>отдел стартеров и генераторов</h5>
 
-            <h4>/095/ 895-4332 </h4>
-            <h5>отдел подшипников и автозапчастей</h5>
+              <h4>/095/ 895-4332 </h4>
+              <h5>отдел подшипников и автозапчастей</h5>
 
-            <br />
-            <h4>Email:</h4>
-            <h4>
-              <a href="mailto:info@starterplus.net">info@starterplus.net</a>
-            </h4>
-            <br />
-            <h3> Адрес:</h3>
-            <h4> г.Чернигов</h4>
-            <h4> ул. Инструментальная 34</h4>
-          </Col>
-          <Col>
-            <h3>Наши Услуги</h3>
-            <h4>Мы занимаемся</h4>
-            <i className="icon-wrench icon-white" />
-            ремонтом стартеров
-            <p />
-            <i className="icon-wrench icon-white" />
-            ремонтом генераторов
-            <p />
-            <i className="icon-wrench icon-white" />
-            производством тормозных трубок
-            <p />
-            <h4>Мы реализуем</h4>
-            <i className="icon-wrench icon-white" />
-            Стартеры и генераторы
-            <p />
-            <i className="icon-wrench icon-white" />
-            автоэлектронику
-            <p />
-            <i className="icon-wrench icon-white" />
-            Запчасти к легковым и комерческим автомобилям
-            <p />
-            <i className="icon-wrench icon-white" />
-            Подшипники
-            <p />
-            <i className="icon-wrench icon-white" />
-            Масла Comma
-            <p />
-            <i className="icon-wrench icon-white" />
-            Фильтры оптом
-            <p />
-            <i className="icon-wrench icon-white" />
-            аккумуляторы Bosch,Varta,A-Мega,Rocket
-            <p />
-            <h4>А также у нас доступно</h4>
-            <i className="icon-wrench icon-white" />
-            снятие и установка агрегатов
-            <p />
-            <i className="icon-wrench icon-white" />
-            Страхование автотранспорта
-          </Col>
-          <Col>
-            <h3>Коротко о Нас</h3>
-            <br />
-
-            <p>
-              ССЦ СТАРТЕР+ - это предприятие создано для ремонта и продажи
-              стартеров и генераторов, комплектующих к ним, реализации
-              автозапчастей и подшипников для легковых и грузовых
-              автомобилей,спецтехники иностранного и отечественного
-              производства.{' '}
-            </p>
-            <br />
-            <br />
-            <p>
-              CCЦ Стартер+ обладает квалифицированными кадрами и всем
-              необходимым технологическим оборудованием для качественного
-              выполнения ремонта в сжатые сроки. 90% комплектующих находится на
-              собственном складе сервисного центра,что позволяет производить
-              ремонт в течении рабочего дня, а в особых случаях в течении суток.{' '}
-            </p>
-          </Col>
-          <Col md="1" />
-        </Row>
-        <Row className="align-items-start">
-          <Col md="1" />
-          <Col>
+              <br />
+              <h4>Email:</h4>
+              <h4>
+                <a href="mailto:info@starterplus.net">info@starterplus.net</a>
+              </h4>
+              <br />
+              <h3> Адрес:</h3>
+              <h4> г.Чернигов</h4>
+              <h4> ул. Инструментальная 34</h4>
+            </div>
             <Button
+              className=""
               color="primary"
               onClick={() => {
                 this.props.handleClick('contacts');
@@ -468,7 +402,48 @@ class SiteFooter extends Component {
               контакты...
             </Button>
           </Col>
-          <Col>
+          <Col className="d-flex flex-column justify-content-between">
+            <div>
+              <h3>Наши Услуги</h3>
+              <h4>Мы занимаемся</h4>
+              <i className="icon-wrench icon-white" />
+              ремонтом стартеров
+              <p />
+              <i className="icon-wrench icon-white" />
+              ремонтом генераторов
+              <p />
+              <i className="icon-wrench icon-white" />
+              производством тормозных трубок
+              <p />
+              <h4>Мы реализуем</h4>
+              <i className="icon-wrench icon-white" />
+              Стартеры и генераторы
+              <p />
+              <i className="icon-wrench icon-white" />
+              автоэлектронику
+              <p />
+              <i className="icon-wrench icon-white" />
+              Запчасти к легковым и комерческим автомобилям
+              <p />
+              <i className="icon-wrench icon-white" />
+              Подшипники
+              <p />
+              <i className="icon-wrench icon-white" />
+              Масла Comma
+              <p />
+              <i className="icon-wrench icon-white" />
+              Фильтры оптом
+              <p />
+              <i className="icon-wrench icon-white" />
+              аккумуляторы Bosch,Varta,A-Мega,Rocket
+              <p />
+              <h4>А также у нас доступно</h4>
+              <i className="icon-wrench icon-white" />
+              снятие и установка агрегатов
+              <p />
+              <i className="icon-wrench icon-white" />
+              Страхование автотранспорта
+            </div>
             <Button
               color="primary"
               onClick={() => {
@@ -478,7 +453,27 @@ class SiteFooter extends Component {
               услуги...
             </Button>
           </Col>
-          <Col>
+          <Col className="d-flex flex-column justify-content-between">
+            <div className="d-flex flex-column justify-content-between">
+              <h3>Коротко о Нас</h3>
+
+              <p>
+                ССЦ СТАРТЕР+ - это предприятие создано для ремонта и продажи
+                стартеров и генераторов, комплектующих к ним, реализации
+                автозапчастей и подшипников для легковых и грузовых
+                автомобилей,спецтехники иностранного и отечественного
+                производства.{' '}
+              </p>
+
+              <p>
+                CCЦ Стартер+ обладает квалифицированными кадрами и всем
+                необходимым технологическим оборудованием для качественного
+                выполнения ремонта в сжатые сроки. 90% комплектующих находится
+                на собственном складе сервисного центра,что позволяет
+                производить ремонт в течении рабочего дня, а в особых случаях в
+                течении суток.
+              </p>
+            </div>
             <Button
               color="primary"
               onClick={() => {
@@ -488,7 +483,6 @@ class SiteFooter extends Component {
               о нас...
             </Button>
           </Col>
-          <Col md="1" />
         </Row>
       </div>
     );
