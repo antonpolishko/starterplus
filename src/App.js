@@ -22,7 +22,7 @@ import {
 import SiteFooter from './SiteFooter.js';
 
 // import logo from './logo.svg'; //todo replace
-import './App-sketchy.css';
+import './App-darkly.css';
 
 // Текст вебсайта
 const siteLogoText = 'Стартер+';
@@ -401,12 +401,29 @@ class App extends Component {
         </Card>
       );
     if (val === 'contacts')
-      return <SiteContacts handleClick={this.handleClick} />;
+      return (
+        <Card>
+          <SiteContacts handleClick={this.handleClick} />
+        </Card>
+      );
     if (val === 'location')
-      return <SiteLocation handleClick={this.handleClick} />;
-    if (val === 'about') return <SiteAbout handleClick={this.handleClick} />;
+      return (
+        <Card>
+          <SiteLocation handleClick={this.handleClick} />
+        </Card>
+      );
+    if (val === 'about')
+      return (
+        <Card>
+          <SiteAbout handleClick={this.handleClick} />
+        </Card>
+      );
     if (val === 'anniversary')
-      return <SiteAnniversary handleClick={this.handleClick} />;
+      return (
+        <Card>
+          <SiteAnniversary handleClick={this.handleClick} />
+        </Card>
+      );
   }
 
   render() {
@@ -416,9 +433,9 @@ class App extends Component {
           handleClick={this.handleClick}
           activePage={this.state.page}
         />
-
+        <p />
         <SiteBody>{this.handleBody()}</SiteBody>
-
+        <p />
         <SiteFooter handleClick={this.handleClick} />
         <SiteCopyright />
       </Container>
