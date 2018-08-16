@@ -10,15 +10,9 @@ import {
   NavLink,
   Jumbotron,
   Button,
-  Row,
-  Col,
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  CardLink
+  Card
+  // Row,
+  // Col,
   // UncontrolledDropdown,
   // DropdownToggle,
   // DropdownMenu,

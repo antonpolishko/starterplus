@@ -3,13 +3,13 @@ import {
   Button,
   Row,
   Col,
-  Card,
-  CardImg,
+  // Card,
+  // CardImg,
   CardText,
   CardBody,
-  CardTitle,
-  CardSubtitle,
-  CardLink
+  CardTitle
+  // CardSubtitle,
+  // CardLink
 } from 'reactstrap';
 
 class SiteFooter extends Component {
