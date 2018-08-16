@@ -11,15 +11,24 @@ import {
   Jumbotron,
   Button,
   Row,
-  Col
+  Col,
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  CardLink
   // UncontrolledDropdown,
   // DropdownToggle,
   // DropdownMenu,
   // DropdownItem
 } from 'reactstrap';
 
+import SiteFooter from './SiteFooter.js';
+
 // import logo from './logo.svg'; //todo replace
-import './App.css';
+import './App-sketchy.css';
 
 // Текст вебсайта
 const siteLogoText = 'Стартер+';
@@ -269,7 +278,7 @@ class SiteNavbar extends Component {
           <NavbarToggler onClick={this.toggleNavbar} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
+              <NavItem active={this.props.activePage === '/'}>
                 <NavLink
                   onClick={() => {
                     this.props.handleClick('/');
@@ -278,7 +287,7 @@ class SiteNavbar extends Component {
                   Главная
                 </NavLink>
               </NavItem>
-              <NavItem>
+              <NavItem active={this.props.activePage === 'services'}>
                 <NavLink
                   onClick={() => {
                     this.props.handleClick('services');
@@ -287,7 +296,7 @@ class SiteNavbar extends Component {
                   Услуги
                 </NavLink>
               </NavItem>
-              <NavItem>
+              <NavItem active={this.props.activePage === 'contacts'}>
                 <NavLink
                   onClick={() => {
                     this.props.handleClick('contacts');
@@ -296,7 +305,7 @@ class SiteNavbar extends Component {
                   Контакты
                 </NavLink>
               </NavItem>
-              <NavItem>
+              <NavItem active={this.props.activePage === 'location'}>
                 <NavLink
                   onClick={() => {
                     this.props.handleClick('location');
@@ -305,7 +314,7 @@ class SiteNavbar extends Component {
                   Как к нам проехать
                 </NavLink>
               </NavItem>
-              <NavItem>
+              <NavItem active={this.props.activePage === 'about'}>
                 <NavLink
                   onClick={() => {
                     this.props.handleClick('about');
@@ -355,137 +364,7 @@ class SiteBody extends Component {
   // }
 
   render() {
-    return <Jumbotron>{this.props.children}</Jumbotron>;
-  }
-}
-
-class SiteFooter extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
-  render() {
-    return (
-      <div>
-        <Row>
-          <Col className="d-flex flex-column justify-content-between">
-            <div>
-              <h3>Время работы:</h3>
-              <h5> Пн-Пт с 9-00 до 18-00ч.</h5>
-              <br />
-              <h3>Телефоны: </h3>
-              <h4>/0462/ 605-525</h4>
-
-              <h4>/063/ 595-1913 </h4>
-              <h5>отдел стартеров и генераторов</h5>
-
-              <h4>/095/ 895-4332 </h4>
-              <h5>отдел подшипников и автозапчастей</h5>
-
-              <br />
-              <h4>Email:</h4>
-              <h4>
-                <a href="mailto:info@starterplus.net">info@starterplus.net</a>
-              </h4>
-              <br />
-              <h3> Адрес:</h3>
-              <h4> г.Чернигов</h4>
-              <h4> ул. Инструментальная 34</h4>
-            </div>
-            <Button
-              className=""
-              color="primary"
-              onClick={() => {
-                this.props.handleClick('contacts');
-              }}
-            >
-              контакты...
-            </Button>
-          </Col>
-          <Col className="d-flex flex-column justify-content-between">
-            <div>
-              <h3>Наши Услуги</h3>
-              <h4>Мы занимаемся</h4>
-              <i className="icon-wrench icon-white" />
-              ремонтом стартеров
-              <p />
-              <i className="icon-wrench icon-white" />
-              ремонтом генераторов
-              <p />
-              <i className="icon-wrench icon-white" />
-              производством тормозных трубок
-              <p />
-              <h4>Мы реализуем</h4>
-              <i className="icon-wrench icon-white" />
-              Стартеры и генераторы
-              <p />
-              <i className="icon-wrench icon-white" />
-              автоэлектронику
-              <p />
-              <i className="icon-wrench icon-white" />
-              Запчасти к легковым и комерческим автомобилям
-              <p />
-              <i className="icon-wrench icon-white" />
-              Подшипники
-              <p />
-              <i className="icon-wrench icon-white" />
-              Масла Comma
-              <p />
-              <i className="icon-wrench icon-white" />
-              Фильтры оптом
-              <p />
-              <i className="icon-wrench icon-white" />
-              аккумуляторы Bosch,Varta,A-Мega,Rocket
-              <p />
-              <h4>А также у нас доступно</h4>
-              <i className="icon-wrench icon-white" />
-              снятие и установка агрегатов
-              <p />
-              <i className="icon-wrench icon-white" />
-              Страхование автотранспорта
-            </div>
-            <Button
-              color="primary"
-              onClick={() => {
-                this.props.handleClick('services');
-              }}
-            >
-              услуги...
-            </Button>
-          </Col>
-          <Col className="d-flex flex-column justify-content-between">
-            <div className="d-flex flex-column justify-content-between">
-              <h3>Коротко о Нас</h3>
-
-              <p>
-                ССЦ СТАРТЕР+ - это предприятие создано для ремонта и продажи
-                стартеров и генераторов, комплектующих к ним, реализации
-                автозапчастей и подшипников для легковых и грузовых
-                автомобилей,спецтехники иностранного и отечественного
-                производства.{' '}
-              </p>
-
-              <p>
-                CCЦ Стартер+ обладает квалифицированными кадрами и всем
-                необходимым технологическим оборудованием для качественного
-                выполнения ремонта в сжатые сроки. 90% комплектующих находится
-                на собственном складе сервисного центра,что позволяет
-                производить ремонт в течении рабочего дня, а в особых случаях в
-                течении суток.
-              </p>
-            </div>
-            <Button
-              color="primary"
-              onClick={() => {
-                this.props.handleClick('about');
-              }}
-            >
-              о нас...
-            </Button>
-          </Col>
-        </Row>
-      </div>
-    );
+    return <Container>{this.props.children}</Container>;
   }
 }
 
@@ -515,13 +394,18 @@ class App extends Component {
     //   alert('click');
     //   this.setState({page:newState});
     this.setState({ page: newState });
+    window.scrollTo(0, 0);
   }
 
   handleBody() {
     const val = this.state.page;
     if (val === '/') return <SiteHero handleClick={this.handleClick} />;
     if (val === 'services')
-      return <SiteServices handleClick={this.handleClick} />;
+      return (
+        <Card>
+          <SiteServices handleClick={this.handleClick} />
+        </Card>
+      );
     if (val === 'contacts')
       return <SiteContacts handleClick={this.handleClick} />;
     if (val === 'location')
@@ -533,8 +417,11 @@ class App extends Component {
 
   render() {
     return (
-      <Container fluid>
-        <SiteNavbar handleClick={this.handleClick} />
+      <Container>
+        <SiteNavbar
+          handleClick={this.handleClick}
+          activePage={this.state.page}
+        />
 
         <SiteBody>{this.handleBody()}</SiteBody>
 
