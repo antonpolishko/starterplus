@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import bootstrap theme
+
+// styling for react-image-gallery
+import "react-image-gallery/styles/css/image-gallery.css";
 
 import './index.css';
 import App from './App';

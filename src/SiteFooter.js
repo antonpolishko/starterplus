@@ -7,7 +7,8 @@ import {
   // CardImg,
   CardText,
   CardBody,
-  CardTitle
+  CardTitle,
+  // Container,
   // CardSubtitle,
   // CardLink
 } from 'reactstrap';
@@ -20,7 +21,7 @@ class SiteFooter extends Component {
   render() {
     return (
       <div>
-        <Row>
+        <Row className="no-gutters">
           {/*<Col sm="1" />*/}
           <Col
             sm="4"
@@ -50,7 +51,7 @@ class SiteFooter extends Component {
             {/*</Card>*/}
             <Button
               className=""
-              color="primary"
+              color="success"
               onClick={() => {
                 this.props.handleClick('contacts');
               }}
@@ -120,7 +121,7 @@ class SiteFooter extends Component {
             </CardBody>
             <p />
             <Button
-              color="primary"
+              color="success"
               onClick={() => {
                 this.props.handleClick('services');
               }}
@@ -154,7 +155,7 @@ class SiteFooter extends Component {
               </CardText>
             </CardBody>
             <Button
-              color="primary"
+              color="success"
               onClick={() => {
                 this.props.handleClick('about');
               }}

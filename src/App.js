@@ -10,14 +10,18 @@ import {
   NavLink,
   Jumbotron,
   Button,
-  Card
-  // Row,
-  // Col,
+  // Card,
+  Row,
+  Col,
   // UncontrolledDropdown,
   // DropdownToggle,
   // DropdownMenu,
   // DropdownItem
 } from 'reactstrap';
+
+// React-image-gallery
+import ImageGallery from 'react-image-gallery';
+
 
 import SiteFooter from './SiteFooter.js';
 
@@ -28,8 +32,8 @@ import './App-darkly.css';
 const siteLogoText = 'Стартер+';
 const siteJumbotronHeader = 'Стартер+';
 const siteJumbotronSubHeader =
-  'Добро пожаловать в специализированный сервисный центр СТАРТЕР+. Мы продлим жизнь вашему автомобилю';
-const siteJumbotronText = '';
+  'Добро пожаловать в специализированный сервисный центр СТАРТЕР+.';
+const siteJumbotronText = 'Мы продлим жизнь вашему автомобилю!';
 const siteJumbotronMoreButton = 'Подробнее';
 const siteMapIframe =
   '<iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&amp;msid=202198080654084340327.0004d55a7810c2503279f&amp;ie=UTF8&amp;t=m&amp;ll=51.524686,31.261597&amp;spn=0.012816,0.027466&amp;z=15&amp;output=embed"></iframe>';
@@ -40,63 +44,131 @@ const siteMapIframe =
 //   'map': "Как к нам проехать",
 //   'about': "О Нас",
 //   };
+const heroImages = [
+  {
+    original: 'pics/1.jpg',
+  },
+  {
+    original: 'pics/2.jpg',
+  },
+  {
+    original: 'pics/3.jpg',
+  },
+  {
+    original: 'pics/4.jpg',
+  },
+  {
+    original: 'pics/5.jpg',
+  },
+  {
+    original: 'pics/6.jpg',
+  }
+];
+
+const servicesImages = [
+  {
+    original: 'pics/brake1.jpg',
+  },
+  {
+    original: 'pics/brake2.jpg',
+  },
+  {
+    original: 'pics/brake3.jpg',
+  },
+  {
+    original: 'pics/brake4.jpg',
+  },
+  {
+    original: 'pics/brake5.jpg',
+  },
+  {
+    original: 'pics/brake6.jpg',
+  },
+  {
+    original: 'pics/brake7.jpg',
+  },
+  {
+    original: 'pics/brake8.jpg',
+  }
+];
 
 const SiteServices = () => {
   return (
     <div>
-      <h1>Наши Услуги</h1>
-      <ul>
-        <h3>Снятие и установка агрегатов</h3>
-        <h3>Мы изготавливаем</h3>
-        <ul>
-          <li>тормозные трубки</li>
-        </ul>
+      <Row>
+        <Col md='6' className="d-flex flex-column justify-content-between ">
+          <h1>Наши Услуги</h1>
+          <ul>
+            <h3>Снятие и установка агрегатов</h3>
+            <h3>Мы изготавливаем</h3>
+            <ul>
+              <li>тормозные трубки</li>
+            </ul>
 
-        <h3>Мы занимаемся ремонтом</h3>
+            <h3>Мы занимаемся ремонтом</h3>
+            <ul>
+              <li>стартеров</li>
+              <li>генераторов</li>
+            </ul>
+            <h3>Мы реализуем</h3>
+            <ul>
+              <li>Стартеры и генераторы </li>
+              <li>Автоэлектронику</li>
+              <li>Запчасти к легковым и коммерческим автомобилям</li>
+              <li>Подшипники</li>
+              <li>Масла Comma</li>
+              <li>Фильтры оптом</li>
+              <li>аккумуляторы Bosch,Varta,A-Мega,Rocket</li>
+            </ul>
+            <h3>А также</h3>
+            <ul>
+              <li>Страхование автотранспорта</li>
+            </ul>
+          </ul>
+        </Col>
+        <Col md='6' className="d-flex flex-column justify-content-between ">
+          <ImageGallery
+            items={servicesImages} 
+            autoPlay
+            infinite
+            lazyLoad
+            showNav
+            showThumbnails={false}
+            showFullscreenButton={false}
+            showPlayButton={false}
+          />
+        </Col>
+      </Row>
+      <br />
+      <Row className="d-flex flex-column justify-content-between card">
         <ul>
-          <li>стартеров</li>
-          <li>генераторов</li>
-        </ul>
-        <h3>Мы реализуем</h3>
-        <ul>
-          <li>Стартеры и генераторы </li>
-          <li>Автоэлектронику</li>
-          <li>Запчасти к легковым и коммерческим автомобилям</li>
-          <li>Подшипники</li>
-          <li>Масла Comma</li>
-          <li>Фильтры оптом</li>
-          <li>аккумуляторы Bosch,Varta,A-Мega,Rocket</li>
-        </ul>
-        <h3>А также</h3>
-        <ul>
-          <li>Страхование автотранспорта</li>
-        </ul>
+          <h2>ГАРАНТИЯ</h2>
+          <p>
+            ССЦ Стартер+ сервисно ориентированное предприятие,поэтому все товары
+            приобретённые у нас подлежат гарантийному обслуживанию. Сроки гарантии
+            составляют от 1 до 6 месяцев.
+          </p>
+          <p>
+            Сроки рассмотрения рекламаций от 3 до 14 дней. Также товар можно
+            вернуть на протяжении 14 дней с момента приобретения,при условии,что
+            товар не был введён в эксплуатацию и сохранена целостность упаковки.
+          </p>
+        
 
-        <h3>ГАРАНТИЯ</h3>
-        <p>
-          ССЦ Стартер+ сервисно ориентированное предприятие,поэтому все товары
-          приобретённые у нас подлежат гарантийному обслуживанию. Сроки гарантии
-          составляют от 1 до 6 месяцев.
-        </p>
-        <p>
-          Сроки рассмотрения рекламаций от 3 до 14 дней. Также товар можно
-          вернуть на протяжении 14 дней с момента приобретения,при условии,что
-          товар не был введён в эксплуатацию и сохранена целостность упаковки.
-        </p>
-      </ul>
-
-      <h3>За подробностями звоните по телефонам</h3>
-      <ul>
-        <li>
-          <strong> /0462/ 605-525</strong>{' '}
-        </li>
-        <li>
-          <strong>/095/ 895-4332</strong> отдел подшипников и автозапчастей
-        </li>
-        <li>
-          <strong>/063/ 595-1913</strong> отдел стартеров и генераторов
-        </li>
-      </ul>
+          <h3>За подробностями звоните по телефонам</h3>
+          <ul>
+            <li>
+              <strong> /0462/ 605-525</strong>{' '}
+            </li>
+            <li>
+              <strong>/095/ 895-4332</strong> отдел подшипников и автозапчастей
+            </li>
+            <li>
+              <strong>/063/ 595-1913</strong> отдел стартеров и генераторов
+            </li>
+          </ul>
+        </ul>
+      </Row>
     </div>
   );
 };
@@ -267,7 +339,7 @@ class SiteNavbar extends Component {
   render() {
     return (
       <div>
-        <Navbar color="dark" dark expand="md">
+        <Navbar color="dark" dark expand="md" className="fixed-top">
           <NavbarBrand href="/">{siteLogoText}</NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -331,13 +403,31 @@ class SiteHero extends Component {
   // }
 
   render() {
+    
     return (
       <Jumbotron>
-        <h1 className="display-3">{siteJumbotronHeader}</h1>
-        <p className="lead">{siteJumbotronSubHeader}</p>
-        <hr className="my-2" />
-        <p>{siteJumbotronText}</p>
-        <p className="lead">
+        <Row>
+          <Col md="7">
+          <h1 className="display-3">{siteJumbotronHeader}</h1>
+          <p className="lead">{siteJumbotronSubHeader}</p>
+          <hr className="my-2" />
+          <p>{siteJumbotronText}</p>
+          </Col>
+          <Col md="5">
+            <ImageGallery
+              items={heroImages} 
+              autoPlay
+              infinite
+              lazyLoad
+              showNav
+              showThumbnails={false}
+              showFullscreenButton={false}
+              showPlayButton={false}
+            />
+          </Col>
+        </Row>
+        <br />
+        <div className="lead text-center">
           <Button
             color="primary"
             onClick={() => {
@@ -346,7 +436,7 @@ class SiteHero extends Component {
           >
             {siteJumbotronMoreButton}
           </Button>
-        </p>
+        </div>
       </Jumbotron>
     );
   }
@@ -358,7 +448,7 @@ class SiteBody extends Component {
   // }
 
   render() {
-    return <Container>{this.props.children}</Container>;
+    return <div><br />{this.props.children}</div>;
   }
 }
 
@@ -393,36 +483,29 @@ class App extends Component {
 
   handleBody() {
     const val = this.state.page;
-    if (val === '/') return <SiteHero handleClick={this.handleClick} />;
+    if (val === '/') 
+      return (
+        <SiteHero handleClick={this.handleClick} />
+      );
     if (val === 'services')
       return (
-        <Card>
           <SiteServices handleClick={this.handleClick} />
-        </Card>
       );
     if (val === 'contacts')
       return (
-        <Card>
           <SiteContacts handleClick={this.handleClick} />
-        </Card>
       );
     if (val === 'location')
       return (
-        <Card>
           <SiteLocation handleClick={this.handleClick} />
-        </Card>
       );
     if (val === 'about')
       return (
-        <Card>
           <SiteAbout handleClick={this.handleClick} />
-        </Card>
       );
     if (val === 'anniversary')
       return (
-        <Card>
           <SiteAnniversary handleClick={this.handleClick} />
-        </Card>
       );
   }
 
@@ -433,9 +516,12 @@ class App extends Component {
           handleClick={this.handleClick}
           activePage={this.state.page}
         />
-        <p />
-        <SiteBody>{this.handleBody()}</SiteBody>
-        <p />
+        <br /><br /><br />
+        <SiteBody>
+          {this.handleBody()}
+        </SiteBody>
+        
+        
         <SiteFooter handleClick={this.handleClick} />
         <SiteCopyright />
       </Container>
