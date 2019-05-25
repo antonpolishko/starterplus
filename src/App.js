@@ -64,6 +64,8 @@ const heroImages = [
   }
 ];
 
+const contactsImages = [{ original: 'pics/1.jpg' }];
+
 const servicesImages = [
   {
     original: 'pics/brake1.jpg'
@@ -247,39 +249,56 @@ class SiteContacts extends Component {
   render() {
     return (
       <div>
-        <h1>Наши контакты</h1>
-        <ul>
-          <h3>Звоните по телефонам:</h3>
-          <ul>
-            <li>
-              <a href="tel:+380958954332">/095/ 895-4332</a>
-            </li>
-            <li>
-              <a href="tel:+380635951913">/063/ 595-1913</a>
-            </li>
-          </ul>
-          <h3>Пишите на email:</h3>
-          <ul>
-            <li>
-              <a href="mailto:info@starterplus.net">info@starterplus.net</a>
-            </li>
-          </ul>
-          <h3>Заезжайте по адресу:</h3>
-          <ul>
-            <li>г.Чернигов, ул. Инструментальная 34</li>
-            <br />
-            <Button
-              color="primary"
-              onClick={() => {
-                this.props.handleClick('location');
-              }}
-            >
-              <span className="btn-label">
-                <i className="icon-map-marker" /> Найти на карте
-              </span>
-            </Button>
-          </ul>
-        </ul>
+        <Row>
+          <Col md="6" className="d-flex flex-column justify-content-between ">
+            <h1>Наши контакты</h1>
+            <ul>
+              <h3>Звоните по телефонам:</h3>
+              <ul>
+                <li>
+                  <a href="tel:+380958954332">/095/ 895-4332</a>
+                </li>
+                <li>
+                  <a href="tel:+380635951913">/063/ 595-1913</a>
+                </li>
+              </ul>
+              <h3>Пишите на email:</h3>
+              <ul>
+                <li>
+                  <a href="mailto:info@starterplus.net">info@starterplus.net</a>
+                </li>
+              </ul>
+              <h3>Заезжайте по адресу:</h3>
+              <ul>
+                <li>г.Чернигов, ул. Инструментальная 34</li>
+                <br />
+                <Button
+                  color="primary"
+                  onClick={() => {
+                    this.props.handleClick('location');
+                  }}
+                >
+                  <span className="btn-label">
+                    <i className="icon-map-marker" /> Найти на карте
+                  </span>
+                </Button>
+              </ul>
+            </ul>
+          </Col>
+
+          <Col md="6" className="d-flex flex-column justify-content-between ">
+            <ImageGallery
+              items={contactsImages}
+              autoPlay
+              infinite
+              lazyLoad
+              showNav
+              showThumbnails={false}
+              showFullscreenButton={false}
+              showPlayButton={false}
+            />
+          </Col>
+        </Row>
       </div>
     );
   }
