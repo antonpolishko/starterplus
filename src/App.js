@@ -12,7 +12,7 @@ import {
   Button,
   // Card,
   Row,
-  Col,
+  Col
   // UncontrolledDropdown,
   // DropdownToggle,
   // DropdownMenu,
@@ -21,7 +21,6 @@ import {
 
 // React-image-gallery
 import ImageGallery from 'react-image-gallery';
-
 
 import SiteFooter from './SiteFooter.js';
 
@@ -46,49 +45,49 @@ const siteMapIframe =
 //   };
 const heroImages = [
   {
-    original: 'pics/1.jpg',
+    original: 'pics/1.jpg'
   },
   {
-    original: 'pics/2.jpg',
+    original: 'pics/2.jpg'
   },
   {
-    original: 'pics/3.jpg',
+    original: 'pics/3.jpg'
   },
   {
-    original: 'pics/4.jpg',
+    original: 'pics/4.jpg'
   },
   {
-    original: 'pics/5.jpg',
+    original: 'pics/5.jpg'
   },
   {
-    original: 'pics/6.jpg',
+    original: 'pics/6.jpg'
   }
 ];
 
 const servicesImages = [
   {
-    original: 'pics/brake1.jpg',
+    original: 'pics/brake1.jpg'
   },
   {
-    original: 'pics/brake2.jpg',
+    original: 'pics/brake2.jpg'
   },
   {
-    original: 'pics/brake3.jpg',
+    original: 'pics/brake3.jpg'
   },
   {
-    original: 'pics/brake4.jpg',
+    original: 'pics/brake4.jpg'
   },
   {
-    original: 'pics/brake5.jpg',
+    original: 'pics/brake5.jpg'
   },
   {
-    original: 'pics/brake6.jpg',
+    original: 'pics/brake6.jpg'
   },
   {
-    original: 'pics/brake7.jpg',
+    original: 'pics/brake7.jpg'
   },
   {
-    original: 'pics/brake8.jpg',
+    original: 'pics/brake8.jpg'
   }
 ];
 
@@ -96,7 +95,7 @@ const SiteServices = () => {
   return (
     <div>
       <Row>
-        <Col md='6' className="d-flex flex-column justify-content-between ">
+        <Col md="6" className="d-flex flex-column justify-content-between ">
           <h1>Наши Услуги</h1>
           <ul>
             <h3>Снятие и установка агрегатов</h3>
@@ -114,11 +113,12 @@ const SiteServices = () => {
             <ul>
               <li>Стартеры и генераторы </li>
               <li>Автоэлектронику</li>
+              <li>Детали тормозных систем</li>
               <li>Запчасти к легковым и коммерческим автомобилям</li>
               <li>Подшипники</li>
               <li>Масла Comma</li>
               <li>Фильтры оптом</li>
-              <li>аккумуляторы Bosch,Varta,A-Мega,Rocket</li>
+              <li>аккумуляторы Bosch,Varta,A-Мega</li>
             </ul>
             <h3>А также</h3>
             <ul>
@@ -126,9 +126,9 @@ const SiteServices = () => {
             </ul>
           </ul>
         </Col>
-        <Col md='6' className="d-flex flex-column justify-content-between ">
+        <Col md="6" className="d-flex flex-column justify-content-between ">
           <ImageGallery
-            items={servicesImages} 
+            items={servicesImages}
             autoPlay
             infinite
             lazyLoad
@@ -142,33 +142,31 @@ const SiteServices = () => {
       <br />
       <Row className="d-flex flex-column justify-content-between card">
         <ul>
-          <h2>ГАРАНТИЯ</h2>
+          <br />
+          <h3>ГАРАНТИЯ</h3>
           <p>
             ССЦ Стартер+ сервисно ориентированное предприятие,поэтому все товары
-            приобретённые у нас подлежат гарантийному обслуживанию. Сроки гарантии
-            составляют от 1 до 6 месяцев.
+            приобретённые у нас подлежат гарантийному обслуживанию. Сроки
+            гарантии составляют от 1 до 6 месяцев.
           </p>
           <p>
             Сроки рассмотрения рекламаций от 3 до 14 дней. Также товар можно
             вернуть на протяжении 14 дней с момента приобретения,при условии,что
             товар не был введён в эксплуатацию и сохранена целостность упаковки.
           </p>
-        
 
           <h3>За подробностями звоните по телефонам</h3>
           <ul>
             <li>
-              <strong> /0462/ 605-525</strong>{' '}
+              <a href="tel:+380958954332">/095/ 895-4332</a>
             </li>
             <li>
-              <strong>/095/ 895-4332</strong> отдел подшипников и автозапчастей
-            </li>
-            <li>
-              <strong>/063/ 595-1913</strong> отдел стартеров и генераторов
+              <a href="tel:+380635951913">/063/ 595-1913</a>
             </li>
           </ul>
         </ul>
       </Row>
+      <br />
     </div>
   );
 };
@@ -403,19 +401,18 @@ class SiteHero extends Component {
   // }
 
   render() {
-    
     return (
       <Jumbotron>
         <Row>
           <Col md="7">
-          <h1 className="display-3">{siteJumbotronHeader}</h1>
-          <p className="lead">{siteJumbotronSubHeader}</p>
-          <hr className="my-2" />
-          <p>{siteJumbotronText}</p>
+            <h1 className="display-3">{siteJumbotronHeader}</h1>
+            <p className="lead">{siteJumbotronSubHeader}</p>
+            <hr className="my-2" />
+            <p>{siteJumbotronText}</p>
           </Col>
           <Col md="5">
             <ImageGallery
-              items={heroImages} 
+              items={heroImages}
               autoPlay
               infinite
               lazyLoad
@@ -448,7 +445,12 @@ class SiteBody extends Component {
   // }
 
   render() {
-    return <div><br />{this.props.children}</div>;
+    return (
+      <div>
+        <br />
+        {this.props.children}
+      </div>
+    );
   }
 }
 
@@ -483,30 +485,16 @@ class App extends Component {
 
   handleBody() {
     const val = this.state.page;
-    if (val === '/') 
-      return (
-        <SiteHero handleClick={this.handleClick} />
-      );
+    if (val === '/') return <SiteHero handleClick={this.handleClick} />;
     if (val === 'services')
-      return (
-          <SiteServices handleClick={this.handleClick} />
-      );
+      return <SiteServices handleClick={this.handleClick} />;
     if (val === 'contacts')
-      return (
-          <SiteContacts handleClick={this.handleClick} />
-      );
+      return <SiteContacts handleClick={this.handleClick} />;
     if (val === 'location')
-      return (
-          <SiteLocation handleClick={this.handleClick} />
-      );
-    if (val === 'about')
-      return (
-          <SiteAbout handleClick={this.handleClick} />
-      );
+      return <SiteLocation handleClick={this.handleClick} />;
+    if (val === 'about') return <SiteAbout handleClick={this.handleClick} />;
     if (val === 'anniversary')
-      return (
-          <SiteAnniversary handleClick={this.handleClick} />
-      );
+      return <SiteAnniversary handleClick={this.handleClick} />;
   }
 
   render() {
@@ -516,12 +504,11 @@ class App extends Component {
           handleClick={this.handleClick}
           activePage={this.state.page}
         />
-        <br /><br /><br />
-        <SiteBody>
-          {this.handleBody()}
-        </SiteBody>
-        
-        
+        <br />
+        <br />
+        <br />
+        <SiteBody>{this.handleBody()}</SiteBody>
+
         <SiteFooter handleClick={this.handleClick} />
         <SiteCopyright />
       </Container>
