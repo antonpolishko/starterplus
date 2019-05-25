@@ -7,7 +7,7 @@ import {
   // CardImg,
   CardText,
   CardBody,
-  CardTitle,
+  CardTitle
   // Container,
   // CardSubtitle,
   // CardLink
@@ -29,23 +29,22 @@ class SiteFooter extends Component {
           >
             {/*<Card>*/}
             <CardBody>
-              <CardTitle>Время работы:</CardTitle>
+              <h3>Время работы:</h3>
               <CardText>Пн-Пт с 9-00 до 18-00ч.</CardText>
               <CardTitle>Телефоны:</CardTitle>
-              <p>/0462/ 605-525</p>
-
-              <p>/063/ 595-1913 </p>
-              <p>отдел стартеров и генераторов</p>
-
-              <p>/095/ 895-4332 </p>
-              <p>отдел подшипников и автозапчастей</p>
+              <p>
+                <a href="tel:+380635951913">/063/ 595-1913</a>
+              </p>
+              <p>
+                <a href="tel:+380958954332">/095/ 895-4332</a>
+              </p>
               <CardTitle>Email:</CardTitle>
               <CardText>
                 <a href="mailto:info@starterplus.net">info@starterplus.net</a>
               </CardText>
               <CardTitle>Адрес:</CardTitle>
-              <p> г.Чернигов</p>
-              <p> ул. Инструментальная 34</p>
+              <p>г.Чернигов</p>
+              <p>ул. Инструментальная 34</p>
             </CardBody>
 
             {/*</Card>*/}
@@ -94,6 +93,10 @@ class SiteFooter extends Component {
               </p>
               <p>
                 <i className="icon-wrench icon-white" />
+                Детали тормозных систем
+              </p>
+              <p>
+                <i className="icon-wrench icon-white" />
                 Подшипники
               </p>
               <p>
@@ -106,7 +109,7 @@ class SiteFooter extends Component {
               </p>
               <p>
                 <i className="icon-wrench icon-white" />
-                аккумуляторы Bosch,Varta,A-Мega,Rocket
+                аккумуляторы Bosch, Varta, A-Мega
               </p>
 
               <CardTitle>А также у нас доступно</CardTitle>
@@ -135,7 +138,7 @@ class SiteFooter extends Component {
             className="d-flex flex-column justify-content-between card"
           >
             <CardBody>
-              <CardTitle>Коротко о Нас</CardTitle>
+              <h3>Коротко о Нас</h3>
 
               <CardText>
                 ССЦ СТАРТЕР+ - это предприятие создано для ремонта и продажи
